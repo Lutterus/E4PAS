@@ -1,4 +1,4 @@
-package startClass;
+package model;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -8,48 +8,13 @@ public class Model extends Observable {
 	private boolean check2;
 	private boolean check3;
 	private boolean check4;
-	ArrayList<String> nomes;
-	ArrayList<String> valores;
 
 	public Model() {
-		nomes = new ArrayList<String>();
-		valores = new ArrayList<String>();
+		
 		check1 = false;
 		check2 = false;
 		check3 = false;
 		check4 = false;
-	}
-
-	public void addValor(String d) {
-		valores.add(d);
-	}
-
-	public void removeValor(String d) {
-		int i = 0;
-		int j = 0;
-		for (String valor : valores) {
-			if (valor.contentEquals(d)) {
-				j = i;
-			}
-			i++;
-		}
-		valores.remove(j);
-	}
-
-	public void addNome(String n) {
-		nomes.add(n);
-	}
-
-	public void removeNome(String n) {
-		int i = 0;
-		int j = 0;
-		for (String string : nomes) {
-			if (string.contentEquals(n)) {
-				j = i;
-			}
-			i++;
-		}
-		nomes.remove(j);
 	}
 
 	public boolean isCheck1() {

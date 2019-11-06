@@ -1,20 +1,24 @@
-package startClass;
+package view;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
-import org.eclipse.wb.swt.SWTResourceManager;
+
+import controller.Controller;
+import model.Model;
+
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 
-public class View {
+public class List {
 
 	protected Shell shell;
 	private Controller c;
 
-	public View(Controller c) {
+	public List(Controller c) {
 		this.c = c;
 	}
 
@@ -22,11 +26,20 @@ public class View {
 	 * Launch the application.
 	 * 
 	 * @param args
-	 * 
-	 *             public static void main(String[] args) { try { View window = new
-	 *             View(); window.open(); } catch (Exception e) {
-	 *             e.printStackTrace(); } }
-	 */
+	 * @wbp.parser.entryPoint
+	 
+	public static void main(String[] args) {
+		try {
+			Model m = new Model();
+			Carrinho car = new Carrinho();
+			Controller c = new Controller(m, car);
+			List v = new List(c);
+			v.open();;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}*/
+
 	/**
 	 * Open the window.
 	 */
@@ -54,15 +67,15 @@ public class View {
 		btnNewButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				c.button();
+				System.out.println("aaa");
 			}
 		});
 		btnNewButton.setBounds(10, 10, 643, 42);
 		btnNewButton.setText("COMPRAR");
 
 		Label image1 = new Label(shell, SWT.NONE);
-		image1.setImage(SWTResourceManager
-				.getImage("C:\\Users\\Joao\\Documents\\projetos\\trabalhos\\E4PAS\\assets\\81YBMaJlCpL._SX425_.jpg"));
+		image1.setImage(
+				SWTResourceManager.getImage("C:\\Users\\16111210\\Desktop\\E4PAS\\assets\\81YBMaJlCpL._SX425_.jpg"));
 		image1.setBounds(10, 72, 200, 200);
 
 		Label nome1 = new Label(shell, SWT.NONE);
@@ -87,8 +100,8 @@ public class View {
 		check1.setText("Adicionar ao carrinho");
 
 		Label image2 = new Label(shell, SWT.NONE);
-		image2.setImage(SWTResourceManager
-				.getImage("C:\\Users\\Joao\\Documents\\projetos\\trabalhos\\E4PAS\\assets\\819RjgaYFfL._SX425_.jpg"));
+		image2.setImage(
+				SWTResourceManager.getImage("C:\\Users\\16111210\\Desktop\\E4PAS\\assets\\819RjgaYFfL._SX425_.jpg"));
 		image2.setBounds(10, 278, 200, 200);
 
 		Label nome2 = new Label(shell, SWT.NONE);
@@ -113,8 +126,8 @@ public class View {
 		check2.setText("Adicionar ao carrinho");
 
 		Label image3 = new Label(shell, SWT.NONE);
-		image3.setImage(SWTResourceManager
-				.getImage("C:\\Users\\Joao\\Documents\\projetos\\trabalhos\\E4PAS\\assets\\81FiGpIjEEL._SL1500_ .jpg"));
+		image3.setImage(
+				SWTResourceManager.getImage("C:\\Users\\16111210\\Desktop\\E4PAS\\assets\\81FiGpIjEEL._SL1500_ .jpg"));
 		image3.setBounds(453, 72, 200, 200);
 
 		Label nome3 = new Label(shell, SWT.NONE);
@@ -139,8 +152,8 @@ public class View {
 		check3.setText("Adicionar ao carrinho");
 
 		Label image4 = new Label(shell, SWT.NONE);
-		image4.setImage(SWTResourceManager
-				.getImage("C:\\Users\\Joao\\Documents\\projetos\\trabalhos\\E4PAS\\assets\\81PLaKLB-0L._SX425_.jpg"));
+		image4.setImage(
+				SWTResourceManager.getImage("C:\\Users\\16111210\\Desktop\\E4PAS\\assets\\81PLaKLB-0L._SX425_.jpg"));
 		image4.setBounds(453, 278, 200, 200);
 
 		Label nome4 = new Label(shell, SWT.NONE);
